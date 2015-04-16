@@ -22,10 +22,10 @@ module WillPaginate
         ajax_call = "$.ajax({url: '#{target}', dataType: 'script'});"
         @template.link_to_function(text.to_s.html_safe, ajax_call, attributes)
       end
-    end
 
-    def ajax_will_paginate(collection, options = {})
-      will_paginate(collection, options.merge(:renderer => WillPaginate::ViewHelpers::AjaxLinkRenderer))
+      def ajax_will_paginate(collection, options = {})
+        will_paginate(collection, options.merge(:renderer => WillPaginate::ViewHelpers::AjaxLinkRenderer))
+      end
     end
   end
 end
