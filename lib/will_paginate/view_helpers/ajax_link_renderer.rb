@@ -1,4 +1,4 @@
-module WillPaginate
+module WillPaginateHelper
   class AjaxLinkRenderer < WillPaginate::ActionView::LinkRenderer
     def prepare(collection, options, template)
       options[:params] ||= {}
@@ -18,6 +18,6 @@ module WillPaginate
   end
 
   def ajax_will_paginate(collection, options = {})
-    will_paginate(collection, options.merge(:renderer => WillPaginate::AjaxLinkRenderer))
+    will_paginate(collection, options.merge(:renderer => WillPaginateHelper::AjaxLinkRenderer))
   end
 end
